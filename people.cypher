@@ -1,55 +1,3 @@
-OPTIONAL MATCH (warsaw:City{name:'Warszawa'}),
-	   (cracow:City{name:'Krakow'}),
-	   (zakopane:City{name:'Zakopane'}),
-	   (torun:City{name:'Torun'}),
-	   (gdansk:City{name:'Gdansk'}),
-	   (poznan:City{name:'Poznan'}),
-	   (paris:City{name:'Paris'}),
-	   (nice:City{name:'Nice'}),
-	   (avignon:City{name:'Avignon'}),
-	   (lyon:City{name:'Lyon'}),
-	   (marseille:City{name:'Marseille'}),
-	   (perpignon:City{name:'Perpignan'}),
-	   (rome:City{code:'ROM'}),
-	   (milan:City{name:'Milano'}),
-	   (palermo:City{name:'Palermo'}),
-	   (neapol:City{name:'Napoli'}),
-	   (bari:City{name:'Bari'}),
-	   (barcelona:City{name:'Barcelona'}),
-	   (madrid:City{name:'Madrid'}),
-	   (seville:City{name:'Sevilla'}),
-	   (bilbao:City{name:'Bilbao'}),
-	   (porto:City{name:'Porto'}),
-	   (lisbon:City{name:'Lisboa'}),
-	   (cascais:City{name:'Cascais'}),
-	   (faro:City{name:'Faro'}),
-	   (london:City{name:'London'}),
-	   (glasgow:City{name:'Glasgow'}),
-	   (manchester:City{name:'Manchester'}),
-	   (cardiff:City{name:'Cardiff'}),
-	   (chicago:City{name:'Chicago'}),
-	   (newYork:City{code:'NYC'}),
-	   (boston:City{name:'Boston'}),
-	   (philadelphia:City{name:'Philadelphia'}),
-	   (washington:City{name:'Washington'}),
-	   (seattle:City{name:'Seattle'}),
-	   (sanFrancisco:City{code:'SFO'}),
-	   (sanJose:City{code:'SJC'}),
-	   (monterey:City{name:'Monterey'}),
-	   (santaBarbara:City{code:'SBA'}),
-	   (losAngeles:City{code:'LAX'}),
-	   (lasVegas:City{code:'LAS'}),
-	   (warsawYouthHostel:PlaceToSleep{name:'Villa Jeziorki 71'}),
-           (sheraton:PlaceToSleep{name:'Sheraton'}),
-           (classic:PlaceToSleep{name:'Mazowiecki'}),
-	   (pierogi:Sustenance{name:'Pierogarnia Zapiecek'}),
-	   (drinkBar:Sustenance{name:'Literatka'}),
-	   (belvederRestaurant:Sustenance{name:'Orient Express'}),
-	   (disco:Sustenance{name:'Grill Bar Zgoda'})
-
-
-
-
 //Person
 CREATE (kate:Person{name:'Kate', age:30, blog_address:'kate blog'}),
        (ben:Person{name:'Ben', age:56, blog_address:'ben blog'}),
@@ -95,8 +43,21 @@ CREATE  (kate)-[:WENT_FOR]->(kateInUsa),
 		(kate)-[:WENT_FOR]->(kateInUsa11),
 		(kate)-[:WENT_FOR]->(kateInUsa12),
 		(kate)-[:WENT_FOR]->(kateInUsaEnd)
-
+WITH kateInUsa, kateInUsa1, kateInUsa2, kateInUsa3, kateInUsa4, kateInUsa5, kateInUsa6, kateInUsa7, kateInUsa8, kateInUsa9, kateInUsa10, kateInUsa11, kateInUsa12, kateInUsaEnd
 //Trip TO Place
+MATCH (madrid:City{name:'Madrid'}),
+      (chicago:City{name:'Chicago'}),
+      (newYork:City{code:'NYC'}),
+      (boston:City{name:'Boston'}),
+      (philadelphia:City{name:'Philadelphia'}),
+      (washington:City{name:'Washington'}),
+      (seattle:City{name:'Seattle'}),
+      (sanFrancisco:City{code:'SFO'}),
+      (sanJose:City{code:'SJC'}),
+      (monterey:City{name:'Monterey'}),
+      (santaBarbara:City{code:'SBA'}),
+      (losAngeles:City{code:'LAX'}),
+      (lasVegas:City{code:'LAS'})
 CREATE (kateInUsa)-[:STARTS_FROM]->(madrid),
 	   (kateInUsa1)-[:TO{transportation:'plane'}]->(chicago),
 	   (kateInUsa2)-[:TO{transportation:'plane'}]->(newYork),
@@ -111,7 +72,7 @@ CREATE (kateInUsa)-[:STARTS_FROM]->(madrid),
 	   (kateInUsa11)-[:TO{transportation:'car'}]->(losAngeles),
 	   (kateInUsa12)-[:TO{transportation:'car'}]->(lasVegas),
 	   (kateInUsaEnd)-[:TO{transportation:'plane'}]->(madrid)
-
+WITH kateInUsa, kateInUsa1, kateInUsa2, kateInUsa3, kateInUsa4, kateInUsa5, kateInUsa6, kateInUsa7, kateInUsa8, kateInUsa9, kateInUsa10, kateInUsa11, kateInUsa12, kateInUsaEnd
 CREATE (kateInUsa1)-[:IS_PART_OF{order_no:1}]->(kateInUsa),
 	   (kateInUsa2)-[:IS_PART_OF{order_no:2}]->(kateInUsa),
 	   (kateInUsa3)-[:IS_PART_OF{order_no:3}]->(kateInUsa),
@@ -141,15 +102,19 @@ CREATE  (ben)-[:WENT_FOR]->(benInUsa),
 		(ben)-[:WENT_FOR]->(benInUsa3),
 		(ben)-[:WENT_FOR]->(benInUsa4),
 		(ben)-[:WENT_FOR]->(benInUsaEnd)
-
+WITH benInUsa, benInUsa1, benInUsa2, benInUsa3, benInUsa4, benInUsaEnd
 //Trip TO Place
+MATCH (london:City{name:'London'}),
+      (sanFrancisco:City{code:'SFO'}),
+      (losAngeles:City{code:'LAX'}),
+      (santaBarbara:City{code:'SBA'})
 CREATE (benInUsa)-[:STARTS_FROM]->(london),
 	   (benInUsa1)-[:TO{transportation:'plane'}]->(sanFrancisco),
 	   (benInUsa2)-[:TO{transportation:'plane'}]->(losAngeles),
 	   (benInUsa3)-[:TO{transportation:'car'}]->(santaBarbara),
 	   (benInUsa4)-[:TO{transportation:'car'}]->(losAngeles),
 	   (benInUsaEnd)-[:TO{transportation:'plane'}]->(london)
-
+WITH benInUsa, benInUsa1, benInUsa2, benInUsa3, benInUsa4, benInUsaEnd
 CREATE (benInUsa1)-[:IS_PART_OF{order_no:1}]->(benInUsa),
 	   (benInUsa2)-[:IS_PART_OF{order_no:2}]->(benInUsa),
 	   (benInUsa3)-[:IS_PART_OF{order_no:3}]->(benInUsa),
@@ -191,8 +156,23 @@ CREATE  (lucas)-[:WENT_FOR]->(lucasEuroTrip),
 		(lucas)-[:WENT_FOR]->(lucasEuroTrip13),
 		(lucas)-[:WENT_FOR]->(lucasEuroTrip14),
 		(lucas)-[:WENT_FOR]->(lucasEuroTripEnd)
-
+WITH lucasEuroTrip, lucasEuroTrip1, lucasEuroTrip2, lucasEuroTrip3, lucasEuroTrip4, lucasEuroTrip5, lucasEuroTrip6, lucasEuroTrip7, lucasEuroTrip8, lucasEuroTrip9, lucasEuroTrip10, lucasEuroTrip11, lucasEuroTrip12, lucasEuroTrip13, lucasEuroTrip14, lucasEuroTripEnd
 //Trip TO Place
+MATCH (warsaw:City{name:'Warszawa'}),
+      (rome:City{code:'ROM'}),
+      (milan:City{name:'Milano'}),
+      (nice:City{name:'Nice'}),
+      (marseille:City{name:'Marseille'}),
+      (avignon:City{name:'Avignon'}),
+      (perpignon:City{name:'Perpignan'}),
+      (barcelona:City{name:'Barcelona'}),
+      (seville:City{name:'Sevilla'}),
+      (faro:City{name:'Faro'}),
+      (lisbon:City{name:'Lisboa'}),
+      (cascais:City{name:'Cascais'}),
+      (porto:City{name:'Porto'}),
+      (paris:City{name:'Paris'}),
+      (madrid:City{name:'Madrid'})
 CREATE (lucasEuroTrip)-[:STARTS_FROM]->(warsaw),
 	   (lucasEuroTrip1)-[:TO{transportation:'plane'}]->(rome),
 	   (lucasEuroTrip2)-[:TO{transportation:'train'}]->(milan),
@@ -209,8 +189,7 @@ CREATE (lucasEuroTrip)-[:STARTS_FROM]->(warsaw),
 	   (lucasEuroTrip13)-[:TO{transportation:'plane'}]->(madrid),
 	   (lucasEuroTrip14)-[:TO{transportation:'plane'}]->(paris),
 	   (lucasEuroTripEnd)-[:TO{transportation:'plane'}]->(warsaw)
-
-
+WITH lucasEuroTrip, lucasEuroTrip1, lucasEuroTrip2, lucasEuroTrip3, lucasEuroTrip4, lucasEuroTrip5, lucasEuroTrip6, lucasEuroTrip7, lucasEuroTrip8, lucasEuroTrip9, lucasEuroTrip10, lucasEuroTrip11, lucasEuroTrip12, lucasEuroTrip13, lucasEuroTrip14, lucasEuroTripEnd
 CREATE (lucasEuroTrip1)-[:IS_PART_OF{order_no:1}]->(lucasEuroTrip),
 	   (lucasEuroTrip2)-[:IS_PART_OF{order_no:2}]->(lucasEuroTrip),
 	   (lucasEuroTrip3)-[:IS_PART_OF{order_no:3}]->(lucasEuroTrip),
@@ -248,8 +227,14 @@ CREATE  (lucas)-[:WENT_FOR]->(pedroPolandTrip),
 		(pedro)-[:WENT_FOR]->(pedroPolandTrip5),
 		(pedro)-[:WENT_FOR]->(pedroPolandTrip6),
 		(pedro)-[:WENT_FOR]->(pedroPolandTripEnd)
-
+WITH pedroPolandTrip, pedroPolandTrip1, pedroPolandTrip2, pedroPolandTrip3, pedroPolandTrip4, pedroPolandTrip5, pedroPolandTrip6, pedroPolandTripEnd
 //Trip TO Place
+MATCH (rome:City{code:'ROM'}),
+      (warsaw:City{name:'Warszawa'}),
+      (torun:City{name:'Torun'}),
+      (poznan:City{name:'Poznan'}),
+      (zakopane:City{name:'Zakopane'}),
+      (cracow:City{name:'Krakow'})
 CREATE (pedroPolandTrip)-[:STARTS_FROM]->(rome),
 	   (pedroPolandTrip1)-[:TO{transportation:'plane'}]->(warsaw),
 	   (pedroPolandTrip2)-[:TO{transportation:'bus'}]->(torun),
@@ -258,8 +243,7 @@ CREATE (pedroPolandTrip)-[:STARTS_FROM]->(rome),
 	   (pedroPolandTrip5)-[:TO{transportation:'car'}]->(zakopane),
 	   (pedroPolandTrip6)-[:TO{transportation:'bus'}]->(cracow),
 	   (pedroPolandTripEnd)-[:TO{transportation:'plane'}]->(rome)
-
-
+WITH pedroPolandTrip, pedroPolandTrip1, pedroPolandTrip2, pedroPolandTrip3, pedroPolandTrip4, pedroPolandTrip5, pedroPolandTrip6, pedroPolandTripEnd
 CREATE (pedroPolandTrip1)-[:IS_PART_OF{order_no:1}]->(pedroPolandTrip),
 	   (pedroPolandTrip2)-[:IS_PART_OF{order_no:2}]->(pedroPolandTrip),
 	   (pedroPolandTrip3)-[:IS_PART_OF{order_no:3}]->(pedroPolandTrip),
@@ -283,15 +267,18 @@ CREATE  (pierre)-[:WENT_FOR]->(pierrePolandTrip),
 		(pierre)-[:WENT_FOR]->(pierrePolandTrip2),
 		(pierre)-[:WENT_FOR]->(pierrePolandTrip3),
 		(pierre)-[:WENT_FOR]->(pierrePolandTripEnd)
-
+WITH pierrePolandTrip, pierrePolandTrip1, pierrePolandTrip2, pierrePolandTrip3, pierrePolandTripEnd
 //Trip TO Place
+MATCH (nice:City{name:'Nice'}),
+      (poznan:City{name:'Poznan'}),
+      (warsaw:City{name:'Warszawa'}),
+      (cracow:City{name:'Krakow'})
 CREATE (pierrePolandTrip)-[:STARTS_FROM]->(nice),
 	   (pierrePolandTrip1)-[:TO{transportation:'plane'}]->(poznan),
 	   (pierrePolandTrip2)-[:TO{transportation:'train'}]->(warsaw),
 	   (pierrePolandTrip3)-[:TO{transportation:'train'}]->(cracow),
 	   (pierrePolandTripEnd)-[:TO{transportation:'plane'}]->(nice)
-
-
+WITH pierrePolandTrip, pierrePolandTrip1, pierrePolandTrip2, pierrePolandTrip3, pierrePolandTripEnd
 CREATE (pierrePolandTrip1)-[:IS_PART_OF{order_no:1}]->(pierrePolandTrip),
 	   (pierrePolandTrip2)-[:IS_PART_OF{order_no:2}]->(pierrePolandTrip),
 	   (pierrePolandTrip3)-[:IS_PART_OF{order_no:3}]->(pierrePolandTrip),
@@ -314,16 +301,19 @@ CREATE  (claudia)-[:WENT_FOR]->(claudiaPolandTrip),
 		(claudia)-[:WENT_FOR]->(claudiaPolandTrip3),
 		(claudia)-[:WENT_FOR]->(claudiaPolandTrip4),
 		(claudia)-[:WENT_FOR]->(claudiaPolandTripEnd)
-
+WITH claudiaPolandTrip, claudiaPolandTrip1, claudiaPolandTrip2, claudiaPolandTrip3, claudiaPolandTrip4, claudiaPolandTripEnd
 //Trip TO Place
+MATCH (lisbon:City{name:'Lisboa'}),
+      (warsaw:City{name:'Warszawa'}),
+      (cracow:City{name:'Krakow'}),
+      (zakopane:City{name:'Zakopane'})
 CREATE (claudiaPolandTrip)-[:STARTS_FROM]->(lisbon),
 	   (claudiaPolandTrip1)-[:TO{transportation:'plane'}]->(warsaw),
 	   (claudiaPolandTrip2)-[:TO{transportation:'train'}]->(cracow),
 	   (claudiaPolandTrip3)-[:TO{transportation:'bus'}]->(zakopane),
 	   (claudiaPolandTrip4)-[:TO{transportation:'bus'}]->(warsaw),
 	   (claudiaPolandTripEnd)-[:TO{transportation:'plane'}]->(lisbon)
-
-
+WITH claudiaPolandTrip, claudiaPolandTrip1, claudiaPolandTrip2, claudiaPolandTrip3, claudiaPolandTrip4, claudiaPolandTripEnd
 CREATE (claudiaPolandTrip1)-[:IS_PART_OF{order_no:1}]->(claudiaPolandTrip),
 	   (claudiaPolandTrip2)-[:IS_PART_OF{order_no:2}]->(claudiaPolandTrip),
 	   (claudiaPolandTrip3)-[:IS_PART_OF{order_no:3}]->(claudiaPolandTrip),
@@ -347,23 +337,26 @@ CREATE  (norah)-[:WENT_FOR]->(norahPolandTrip),
 		(norah)-[:WENT_FOR]->(norahPolandTrip3),
 		(norah)-[:WENT_FOR]->(norahPolandTrip4),
 		(norah)-[:WENT_FOR]->(norahPolandTripEnd)
-
+WITH norahPolandTrip, norahPolandTrip1, norahPolandTrip2, norahPolandTrip3, norahPolandTrip4, norahPolandTripEnd
 //Trip TO Place
+MATCH (chicago:City{name:'Chicago'}),
+      (warsaw:City{name:'Warszawa'}),
+      (cracow:City{name:'Krakow'}),
+      (zakopane:City{name:'Zakopane'})
 CREATE (norahPolandTrip)-[:STARTS_FROM]->(chicago),
 	   (norahPolandTrip1)-[:TO{transportation:'plane'}]->(warsaw),
 	   (norahPolandTrip2)-[:TO{transportation:'train'}]->(cracow),
 	   (norahPolandTrip3)-[:TO{transportation:'bus'}]->(zakopane),
 	   (norahPolandTrip4)-[:TO{transportation:'bus'}]->(warsaw),
 	   (norahPolandTripEnd)-[:TO{transportation:'plane'}]->(chicago)
-
-
+WITH norahPolandTrip, norahPolandTrip1, norahPolandTrip2, norahPolandTrip3, norahPolandTrip4, norahPolandTripEnd
 CREATE (norahPolandTrip1)-[:IS_PART_OF{order_no:1}]->(norahPolandTrip),
 	   (norahPolandTrip2)-[:IS_PART_OF{order_no:2}]->(norahPolandTrip),
 	   (norahPolandTrip3)-[:IS_PART_OF{order_no:3}]->(norahPolandTrip),
 	   (norahPolandTrip4)-[:IS_PART_OF{order_no:4}]->(norahPolandTrip),
 	   (norahPolandTripEnd)-[:IS_PART_OF{order_no:5}]->(norahPolandTrip)
 
-	   // tom in London
+// tom in London
 
 //Trip
 CREATE (tomLondonTrip:Trip{name:'Weekend in London', duration:2, year_season:'summer', type:'standard'}),
@@ -374,13 +367,14 @@ CREATE (tomLondonTrip:Trip{name:'Weekend in London', duration:2, year_season:'su
 CREATE  (tom)-[:WENT_FOR]->(tomLondonTrip),
 		(tom)-[:WENT_FOR]->(tomLondonTrip1),
 		(tom)-[:WENT_FOR]->(tomLondonTripEnd)
-
+WITH tomLondonTrip, tomLondonTrip1, tomLondonTripEnd
 //Trip TO Place
+MATCH (madrid:City{name:'Madrid'}),
+      (london:City{name:'London'})
 CREATE (tomLondonTrip)-[:STARTS_FROM]->(madrid),
 	   (tomLondonTrip1)-[:TO{transportation:'plane'}]->(london),
 	   (tomLondonTripEnd)-[:TO{transportation:'plane'}]->(madrid)
-
-
+WITH tomLondonTrip, tomLondonTrip1, tomLondonTripEnd
 CREATE (tomLondonTrip1)-[:IS_PART_OF{order_no:1}]->(tomLondonTrip),
 	   (tomLondonTripEnd)-[:IS_PART_OF{order_no:2}]->(tomLondonTrip)
 
@@ -395,13 +389,14 @@ CREATE (johnBarcelonaTrip:Trip{name:'Weekend in Barcelona', duration:2, year_sea
 CREATE  (john)-[:WENT_FOR]->(johnBarcelonaTrip),
 		(john)-[:WENT_FOR]->(johnBarcelonaTrip1),
 		(john)-[:WENT_FOR]->(johnBarcelonaTripEnd)
-
+WITH johnBarcelonaTrip, johnBarcelonaTrip1, johnBarcelonaTripEnd
 //Trip TO Place
+MATCH (madrid:City{name:'Madrid'}),
+      (barcelona:City{name:'Barcelona'})
 CREATE (johnBarcelonaTrip)-[:STARTS_FROM]->(madrid),
 	   (johnBarcelonaTrip1)-[:TO{transportation:'plane'}]->(barcelona),
 	   (johnBarcelonaTripEnd)-[:TO{transportation:'plane'}]->(madrid)
-
-
+WITH johnBarcelonaTrip, johnBarcelonaTrip1, johnBarcelonaTripEnd
 CREATE (johnBarcelonaTrip1)-[:IS_PART_OF{order_no:1}]->(johnBarcelonaTrip),
 	   (johnBarcelonaTripEnd)-[:IS_PART_OF{order_no:2}]->(johnBarcelonaTrip)
 
@@ -416,19 +411,21 @@ CREATE (kateBarcelonaTrip:Trip{name:'Weekend in Barcelona', duration:2, year_sea
 CREATE  (kate)-[:WENT_FOR]->(kateBarcelonaTrip),
 		(kate)-[:WENT_FOR]->(kateBarcelonaTrip1),
 		(kate)-[:WENT_FOR]->(kateBarcelonaTripEnd)
-
+WITH kateBarcelonaTrip, kateBarcelonaTrip1, kateBarcelonaTripEnd
 //Trip TO Place
+MATCH (madrid:City{name:'Madrid'}),
+      (barcelona:City{name:'Barcelona'})
 CREATE (kateBarcelonaTrip)-[:STARTS_FROM]->(madrid),
 	   (kateBarcelonaTrip1)-[:TO{transportation:'plane'}]->(barcelona),
 	   (kateBarcelonaTripEnd)-[:TO{transportation:'plane'}]->(madrid)
-
-
+WITH kateBarcelonaTrip, kateBarcelonaTrip1, kateBarcelonaTripEnd
 CREATE (kateBarcelonaTrip1)-[:IS_PART_OF{order_no:1}]->(kateBarcelonaTrip),
 	   (kateBarcelonaTripEnd)-[:IS_PART_OF{order_no:2}]->(kateBarcelonaTrip)
-
-
-
+WITH *
 //STAYED_AT
+MATCH (warsawYouthHostel:PlaceToSleep{name:'Villa Jeziorki 71'}),
+      (sheraton:PlaceToSleep{name:'Sheraton'}),
+      (classic:PlaceToSleep{name:'Mazowiecki'})
 CREATE (norahPolandTrip1)-[:STAYED_AT{rate:5, avg_price_per_night:60}]->(warsawYouthHostel),
 	   (norahPolandTrip4)-[:STAYED_AT{rate:5, avg_price_per_night:120}]->(classic),
 	   (claudiaPolandTrip1)-[:STAYED_AT{rate:5, avg_price_per_night:100}]->(classic),
@@ -436,8 +433,12 @@ CREATE (norahPolandTrip1)-[:STAYED_AT{rate:5, avg_price_per_night:60}]->(warsawY
 	   (pedroPolandTrip1)-[:STAYED_AT{rate:5, avg_price_per_night:120}]->(classic),
 	   (pedroPolandTrip4)-[:STAYED_AT{rate:5, avg_price_per_night:100}]->(classic),
 	   (pierrePolandTrip2)-[:STAYED_AT{rate:5, avg_price_per_night:400}]->(sheraton)
-
+WITH *
 //WENT_TO
+MATCH (pierogi:Sustenance{name:'Pierogarnia Zapiecek'}),
+      (drinkBar:Sustenance{name:'Literatka'}),
+      (belvederRestaurant:Sustenance{name:'Orient Express'}),
+      (disco:Sustenance{name:'Grill Bar Zgoda'})
 CREATE (norahPolandTrip1)-[:WENT_TO{rate:5, avg_money_spent:50}]->(disco),
 	   (norahPolandTrip4)-[:WENT_TO{rate:5, avg_money_spent:30}]->(pierogi),
 	   (claudiaPolandTrip1)-[:WENT_TO{rate:5, avg_money_spent:30}]->(pierogi),
@@ -445,8 +446,15 @@ CREATE (norahPolandTrip1)-[:WENT_TO{rate:5, avg_money_spent:50}]->(disco),
 	   (pedroPolandTrip1)-[:WENT_TO{rate:5, avg_money_spent:30}]->(pierogi),
 	   (pedroPolandTrip4)-[:WENT_TO{rate:5, avg_money_spent:50}]->(drinkBar),
 	   (pierrePolandTrip2)-[:WENT_TO{rate:5, avg_money_spent:400}]->(belvederRestaurant)
-
+WITH *
 //LIVES_IN
+MATCH (madrid:City{name:'Madrid'}),
+      (london:City{name:'London'}),
+      (lisbon:City{name:'Lisboa'}),
+      (chicago:City{name:'Chicago'}),
+      (warsaw:City{name:'Warszawa'}),
+      (rome:City{code:'ROM'}),
+      (nice:City{name:'Nice'})
 CREATE (kate)-[:LIVES_IN]->(madrid),
 	   (ben)-[:LIVES_IN]->(london),
 	   (tom)-[:LIVES_IN]->(madrid),
