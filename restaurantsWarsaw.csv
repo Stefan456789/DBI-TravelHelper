@@ -1,11 +1,11 @@
 name,lon,lat,cuisine,addr_city,addr_street,addr_housenumber,website
-"Restauracja Polska",19.4363,52.2307,"Polish","Warszawa","Aleje Jerozolimskie","1","www.restauracjapolska.pl"
-"Sushido",19.4442,52.2297,"Japanese","Warszawa","Marszałkowska","12","www.sushido.pl"
-"Trattoria da Antonio",19.4398,52.2289,"Italian","Warszawa","Nowogrodzka","15","www.trattoriadaantonio.pl"
-"Burger Bar",19.4321,52.2315,"American","Warszawa","Hoża","20","www.burgerbar.pl"
-"Green Caffe Nero",19.4355,52.2322,"Cafe","Warszawa","Krakowskie Przedmieście","5","www.greencaffenero.pl"
-"McDonald's",19.4387,52.2330,"Fast Food","Warszawa","plac Zamkowy","1","www.mcdonalds.pl"
-"Hard Rock Cafe",19.4312,52.2301,"American","Warszawa","Złota","59","www.hardrockcafe.com/location/warsaw"
-"U Szwejka",19.4402,52.2278,"Czech","Warszawa","Chmielna","32","www.uszwejka.pl"
-"Wabu Sushi",19.4423,52.2312,"Japanese","Warszawa","Mokotowska","1","www.wabusushi.pl"
-"Gino's Pizza",19.4376,52.2291,"Italian","Warszawa","Wilcza","25","www.ginospizza.pl"
+Pierogarnia Zapiecek,21.0122,52.2340,Polish,Warszawa,Nowy Swiat,9,http://www.zapiecek.eu
+Literatka,21.0201,52.2384,Coffee and Wine,Warszawa,Krakowskie Przedmiescie,87/89,http://www.literatka.waw.pl
+Orient Express,21.0231,52.2268,Continental,Warszawa,Jasna,24,http://www.orientexpress.pl
+Grill Bar Zgoda,21.0134,52.2298,Grill,Warszawa,Zgoda,5,http://www.grillbarzgoda.pl
+U Fukiera,21.0121,52.2493,Traditional Polish,Warszawa,Rynek Starego Miasta,27,http://www.ufukiera.pl
+Dawne Smaki,21.0145,52.2417,Polish,Warszawa,Nowy Swiat,49,http://www.dawnesmaki.pl
+Sushi Roll,21.0072,52.2266,Japanese,Warszawa,Wilcza,26,http://www.sushiroll.pl
+Trattoria Da Antonio,21.0198,52.2345,Italian,Warszawa,Senatorska,37,http://www.trattoria-antonio.pl
+Kuchnia Warszawska,21.0176,52.2392,Polish,Warszawa,Krakowskie Przedmiescie,79,http://www.kuchniawarszawska.pl
+Cafe Kulturalna,21.0062,52.2381,Cafe,Warszawa,Plac Defilad,1,http://www.cafekulturalna.pl
