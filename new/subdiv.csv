@@ -1,0 +1,34 @@
+CountryCode,RegionCode,RegionName,RegionType
+PL,PL-MZ,Mazowieckie,Voivodeship
+PL,PL-MP,Malopolskie,Voivodeship
+PL,PL-PM,Pomorskie,Voivodeship
+PL,PL-WP,Wielkopolskie,Voivodeship
+PL,PL-KP,Kujawsko-Pomorskie,Voivodeship
+FR,FR-PAC,Provence-Alpes-Côte d'Azur,Region
+FR,FR-OCC,Occitanie,Region
+FR,FR-IDF,Île-de-France,Region
+FR,FR-ARA,Auvergne-Rhône-Alpes,Region
+IT,IT-25,Lombardia,Region
+IT,IT-65,Sicily,Region
+IT,IT-52,Tuscany,Region
+IT,IT-67,Molise,Region
+IT,IT-75,Puglia,Region
+IT,IT-62,Lazio,Region
+ES,ES-MD,Madrid,Community
+ES,ES-CT,Catalonia,Community
+ES,ES-AN,Andalusia,Community
+ES,ES-PV,Basque Country,Community
+PT,PT-11,Lisbon,District
+PT,PT-13,Porto,District
+PT,PT-08,Faro,District
+GB,GB-LND,London,Region
+GB,GB-SCT,Scotland,Country
+GB,GB-WLS,Wales,Country
+US,US-IL,Illinois,State
+US,US-NY,New York,State
+US,US-MA,Massachusetts,State
+US,US-PA,Pennsylvania,State
+US,US-DC,District of Columbia,District
+US,US-WA,Washington,State
+US,US-CA,California,State
+US,US-NV,Nevada,State
